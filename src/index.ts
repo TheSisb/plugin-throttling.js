@@ -26,21 +26,21 @@ const createGroups = function (Bottleneck, common) {
   groups.search = new Bottleneck.Group({
     id: "octokit-search",
     maxConcurrent: 1,
-    minTime: 2000,
+    minTime: 1000,
     ...common,
   });
   // @ts-ignore
   groups.write = new Bottleneck.Group({
     id: "octokit-write",
     maxConcurrent: 1,
-    minTime: 1000,
+    minTime: 0,
     ...common,
   });
   // @ts-ignore
   groups.notifications = new Bottleneck.Group({
     id: "octokit-notifications",
     maxConcurrent: 1,
-    minTime: 3000,
+    minTime: 0,
     ...common,
   });
 };
